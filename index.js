@@ -2,6 +2,8 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+const { arrayExpression } = require("@babel/types");
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -57,11 +59,12 @@ const zooAnimals = [
   Use animalNames to populate and return the displayNames array with only the animal name and scientific name of each animal. 
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
-
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  const displayNames = [];
+  function animalNames(){
+    zooAnimals.forEach(element => displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`))
+    return displayNames
   }
-  
+  console.log(animalNames())
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -69,8 +72,9 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(){
+    const lowerCase = zooAnimals.map(item => item.animal_name.toLowerCase());
+    return lowerCase
   }
   
   
@@ -79,8 +83,9 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(){
+    const lowPop = zooAnimals.filter(item => item.population < 5);
+    return lowPop
   }
   
 
@@ -90,8 +95,9 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(){
+    const totalPop = zooAnimals.reduce((acc, item) => acc + item.population, 0)
+    return totalPop
   }
   
   
