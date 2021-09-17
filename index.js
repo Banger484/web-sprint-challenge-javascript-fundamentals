@@ -18,7 +18,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+// Functions can reach outside of their scope to grab variables, but you can't reach inside of a function for the variable.
 
 
 
